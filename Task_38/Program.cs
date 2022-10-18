@@ -2,22 +2,22 @@
 // массива.
 // [3 7 22 2 78] -> 76
 
-int[] GetArrayFromString(string stringArray)
+double[] GetArrayFromString(string stringArray)
 {
     string[] nums = stringArray.Split(" ", StringSplitOptions.RemoveEmptyEntries);
-    int[] res = new int[nums.Length];
+    double[] res = new double[nums.Length];
 
     for (int i = 0; i < nums.Length; i++)
     {
-        res[i] = int.Parse(nums[i]);
+        res[i] = double.Parse(nums[i]);
     }
     return res;
 }
 
-int FindMax(int[] array)
+double FindMax(double[] array)
 {
     int i = 1;
-    int max = array[0];
+    double max = array[0];
     while (i < array.Length)
     {
         if (array[i] > max)
@@ -29,10 +29,10 @@ int FindMax(int[] array)
     return max;
 }
 
-int FindMin(int[] array)
+double FindMin(double[] array)
 {
     int i = 1;
-    int min = array[0];
+    double min = array[0];
     while (i < array.Length)
     {
         if (array[i] < min)
@@ -45,10 +45,10 @@ int FindMin(int[] array)
 }
 
 Console.Clear();
-Console.Write("Введите масссив чисел: ");
+Console.Write("Введите массив чисел: ");
 string str = Console.ReadLine()!;
-int[] array = GetArrayFromString(str);
-int min = FindMin(array);
-int max = FindMax(array);
+double[] array = GetArrayFromString(str);
+double min = FindMin(array);
+double max = FindMax(array);
 Console.WriteLine(max - min);
 
